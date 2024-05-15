@@ -3,7 +3,7 @@ class StringCalculator
     @numbers = numbers
   end
 
-  # Add multiple numbers provided with deliminator string
+  # Add multiple numbers provided with delimiter string
   def add
     return 0 if @numbers.empty?
     raise_negative_number
@@ -12,17 +12,17 @@ class StringCalculator
     digits.sum
   end
 
-  # Get custom deliminator if present otherwise return default i.e comma(,)
-  private def deliminator
-    @deliminator ||= custom_deliminator? ? @numbers[2] : ","
+  # Get custom delimiter if present otherwise return default i.e comma(,)
+  private def delimiter
+    @delimiter ||= custom_delimiter? ? @numbers[2] : ","
   end
 
-  private def custom_deliminator?
+  private def custom_delimiter?
     @numbers.start_with?("//")
   end
 
   private def digits
-    @numbers.gsub("\n", deliminator).split(deliminator).map(&:to_i)
+    @numbers.gsub("\n", delimiter).split(delimiter).map(&:to_i)
   end
 
   private def raise_negative_number
