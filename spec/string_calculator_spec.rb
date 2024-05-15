@@ -9,6 +9,13 @@ RSpec.describe StringCalculator do
       end
     end
 
+    context "when numbers string contains one number" do
+      it "returns the number itself" do
+        calculator = StringCalculator.new("5")
+        expect(calculator.add).to eq("Invalid input")
+      end
+    end
+
     context "when numbers string contains negative numbers" do
       it "raises an exception with the negative numbers" do
         calculator = StringCalculator.new("1,-2,3,-4")

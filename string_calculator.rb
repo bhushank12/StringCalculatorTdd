@@ -7,6 +7,7 @@ class StringCalculator
   def add
     return 0 if @numbers.empty?
     raise_negative_number
+    return "Invalid input" if digits.count < 2
   end
 
   # Get custom deliminator if present otherwise return default i.e comma(,)
