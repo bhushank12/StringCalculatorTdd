@@ -16,6 +16,13 @@ RSpec.describe StringCalculator do
       end
     end
 
+    context "when numbers string contains two or more numbers" do
+      it "returns the sum of the numbers" do
+        calculator = StringCalculator.new("1,2,3")
+        expect(calculator.add).to eq(6)
+      end
+    end
+
     context "when numbers string contains custom delimiter" do
       it "returns the sum of the numbers" do
         calculator = StringCalculator.new("//;\n1;2;3")
