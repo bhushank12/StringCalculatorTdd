@@ -7,7 +7,7 @@ class StringCalculator
   def add
     return 0 if @numbers.empty?
     raise_negative_number
-    return "Invalid input" if digits.count < 2
+    return "Invalid input cannot add only one number" if digits.count < 2
 
     digits.sum
   end
