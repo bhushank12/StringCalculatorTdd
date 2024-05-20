@@ -10,7 +10,7 @@ RSpec.describe StringCalculator do
     end
 
     context "when numbers string contains one number" do
-      it "returns the number itself" do
+      it "returns invalid input error" do
         calculator = StringCalculator.new("5")
         expect(calculator.add).to eq("Invalid input cannot add only one number")
       end
