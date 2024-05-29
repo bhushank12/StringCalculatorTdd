@@ -11,3 +11,5 @@
 - `StringCalculator.new("//;\n1;2").add` => Returns 3
 
 - `StringCalculator.new("1,-2,3,-4").add` => Returns "Negative numbers not allowed -> -2, -4"
+
+- `StringCalculator.new("//*\n1*2*3").add` => Returns 6
