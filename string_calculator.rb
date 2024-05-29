@@ -22,7 +22,9 @@ class StringCalculator
   end
 
   private def digits
-    @numbers.gsub("\n", delimiter).split(delimiter).map(&:to_i)
+    delimiter_to_use = custom_delimiter? ? delimiter : ","
+
+    @numbers.split("\n").last.split(delimiter_to_use).map(&:to_i)
   end
 
   private def raise_negative_number
