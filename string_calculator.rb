@@ -4,7 +4,7 @@ class StringCalculator
   end
 
   # Add multiple numbers provided with delimiter string
-  def add
+  def perform
     return 0 if @numbers.empty?
     raise_negative_number
     return "Invalid input cannot add only one number" if digits.count < 2
