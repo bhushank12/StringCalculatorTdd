@@ -28,6 +28,11 @@ RSpec.describe StringCalculator do
         calculator = StringCalculator.new("//;\n1;2;3")
         expect(calculator.perform).to eq(6)
       end
+
+      it "returns the sum of the numbers when numbers contains zeros" do
+        calculator = StringCalculator.new("//;\n1;2;3;0;5;0")
+        expect(calculator.perform).to eq(11)
+      end
     end
 
     context "when numbers string contains negative numbers" do
