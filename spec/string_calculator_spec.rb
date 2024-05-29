@@ -23,7 +23,7 @@ RSpec.describe StringCalculator do
       end
     end
 
-    context "when numbers string contains custom delimiter" do
+    context "when numbers string contains custom delimiter(;)" do
       it "returns the sum of the numbers" do
         calculator = StringCalculator.new("//;\n1;2;3")
         expect(calculator.perform).to eq(6)
@@ -32,6 +32,18 @@ RSpec.describe StringCalculator do
       it "returns the sum of the numbers when numbers contains zeros" do
         calculator = StringCalculator.new("//;\n1;2;3;0;5;0")
         expect(calculator.perform).to eq(11)
+      end
+    end
+
+    context "when numbers string contains custom delimiter(*)" do
+      it "returns the product of the numbers" do
+        calculator = StringCalculator.new("//*\n2*2*3")
+        expect(calculator.perform).to eq(12)
+      end
+
+      it "returns the product of the numbers when numbers contains zeros" do
+        calculator = StringCalculator.new("//*\n1*2*3*0*5*0")
+        expect(calculator.perform).to eq(0)
       end
     end
 

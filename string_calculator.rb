@@ -3,13 +3,17 @@ class StringCalculator
     @numbers = numbers
   end
 
-  # Add multiple numbers provided with delimiter string
   def perform
     return 0 if @numbers.empty?
     raise_negative_number
     return "Invalid input cannot add only one number" if digits.count < 2
 
-    digits.sum
+    case delimiter
+    when "*"
+      digits.reduce(:*)
+    else
+      digits.sum
+    end
   end
 
   # Get custom delimiter if present otherwise return default i.e comma(,)
